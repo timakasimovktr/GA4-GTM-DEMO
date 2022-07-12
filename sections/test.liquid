@@ -1,0 +1,266 @@
+<div class="block">
+  
+    <div class="left_block">
+
+      <img src="{{ section.settings.img | img_url: 'medium' | loading: 'lazy'}}" alt="" />
+      
+    </div>
+    <div class="right_block">
+        <!-- {% if section.settings.language == "en" %} -->
+        <!-- {%- elsif section.settings.language == "fr" -%} -->
+        <!-- {% endif %} -->
+      <h2 class="en" id="block-title" style="font-size: {{- section.settings.title_font_size -}}px; color: {{- section.settings.title_color -}};">
+        {{ section.settings.enblocktitle }}
+      </h2>
+      <h2 class="fr dlt" id="block-title" style="font-size: {{- section.settings.title_font_size -}}px; color: {{- section.settings.title_color -}};">
+        {{ section.settings.frblocktitle }}
+      </h2>
+
+      
+      <!-- {% if section.settings.language == "en" %} -->
+      <!-- {%- elsif section.settings.language == "fr" -%} -->
+      <!-- {% endif %} -->
+      <p class="en" id="block-text" style="font-size: {{- section.settings.font_size -}}px; color: {{- section.settings.desc_color -}};">
+        {{ section.settings.enblocktext }}
+      </p>
+      
+      <p class="fr dlt" id="block-text" style="font-size: {{- section.settings.font_size -}}px; color: {{- section.settings.desc_color -}};">
+        {{ section.settings.frblocktext }}
+      </p>
+
+      {% if section.settings.link != blank and section.settings.linktext != blank %}
+
+      <a href="{{ section.settings.link }}">{{ section.settings.linktext }}</a>
+
+      {% else %}
+
+      {% endif %}
+
+    </div>
+  
+</div>
+
+
+<style>
+
+{% if section.settings.imagesize == "70" %}
+  .left_block img {
+      width: 70%;
+      height: 70%;
+    }
+{%- elsif section.settings.imagesize == "60" -%}
+  .left_block img {
+      width: 60%;
+      height: 60%;
+    }
+{%- else -%}
+  .left_block img {
+      width: 50%;
+      height: 50%;
+    }
+{% endif %}
+
+{% if section.settings.pos %}
+.left_block{
+  order: 2;
+}
+
+.right_block{
+  order: 1;
+}
+{%- else -%}
+.left_block{
+  order: 1;
+}
+
+.right_block{
+  order: 2;
+}
+{% endif %}
+
+
+{% if section.settings.text_align == "left" %}
+.right_block{
+  align-items: flex-start;
+}
+{%- elsif section.settings.text_align == "center" -%}
+.right_block{
+  align-items: center;
+}
+{%- elsif section.settings.text_align == "right" -%}
+.right_block{
+  align-items: flex-end;
+}
+{% endif %}
+
+.right_block h2{
+  text-align: {{ section.settings.text_align }};
+}
+.right_block p{
+  text-align: {{ section.settings.text_align }};
+}
+
+
+@media (max-width: 600px) {
+  .left_block{
+    order: 1 !important; 
+  }
+  
+  .right_block{
+    order: 2 !important;
+  }
+}
+
+</style>
+
+{% schema %}
+{
+    "name": "Liquid Basics Example",
+    "settings": 
+        [
+            {
+                "type": "image_picker",
+                "id": "img",
+                "label": "Title"
+            },
+            {
+                "type": "select",
+                "id" : "imagesize",
+                "label" : "Image size",
+                "options": 
+                  [
+                      {
+                        "value": "70",
+                        "label": "Large size"
+                      },
+                      {
+                        "value": "60",
+                        "label": "Medium size"
+                      },
+                      {
+                        "value": "50",
+                        "label": "Small size"
+                      }
+                  ],
+                  "default": "60"
+            },
+            {
+                "type":"checkbox",
+                "id": "pos",
+                "label": "Text first",
+                "default": false
+            },
+            {
+              "type": "text",
+              "id": "enblocktitle",
+              "label": "Title text - english"
+            },
+            {
+              "type": "text",
+              "id": "frblocktitle",
+              "label": "Title text - French"
+            },
+            {
+              "type": "color",
+              "id" : "title_color",
+              "label": "Title text color",
+              "default": "#000000"
+            },
+            {
+              "type": "range",
+              "id": "title_font_size",
+              "min": 14,
+              "max": 50,
+              "step": 1,
+              "unit": "px",
+              "label": "Title font-size",
+              "default": 30
+            },
+            {
+              "type": "textarea",
+              "id": "enblocktext",
+              "label": "Description text - English"
+            },
+            {
+              "type": "textarea",
+              "id": "frblocktext",
+              "label": "Description text - French"
+            },
+            {
+              "type": "color",
+              "id" : "desc_color",
+              "label": "Description text color",
+              "default": "#000000"
+            },
+            {
+              "type": "range",
+              "id": "font_size",
+              "min": 14,
+              "max": 26,
+              "step": 1,
+              "unit": "px",
+              "label": "Description font size",
+              "default": 16
+            },
+
+            {
+              "type": "select",
+              "id" : "language",       
+              "label" : "Choose language",
+              "options": 
+                [
+                    {
+                      "value": "en",
+                      "label": "English"
+                    },
+                    {
+                      "value": "fr",
+                      "label": "French"
+                    }
+                ],
+              "default": "en"
+            },
+
+            {
+              "type": "select",
+              "id" : "text_align",       
+              "label" : "Text align",
+              "options": 
+                [
+                    {
+                      "value": "left",
+                      "label": "Left"
+                    },
+                    {
+                      "value": "center",
+                      "label": "Center"
+                    },
+                    {
+                      "value": "right",
+                      "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+              "id": "link",
+              "type": "url",
+              "label": "Button link"
+            },
+            {
+              "id": "linktext",
+              "type": "text",
+              "label": "Button text",
+              "default": "Click Here"
+            }
+        ],
+        "presets": 
+        [
+            {
+                "name": "Information Text",
+                "category": "Image with text"
+            }
+        ]
+}
+
+{% endschema %}

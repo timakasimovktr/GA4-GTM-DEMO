@@ -1,0 +1,27 @@
+{
+  "current": {
+    "sections": {
+      "test": {
+        "type": "test",
+        "settings": {
+          "img": "shopify:\/\/shop_images\/chair.jpg",
+          "imagesize": "80",
+          "pos": false,
+          "title_color": "#ff0000",
+          "title_font_size": 35,
+          "desc_color": "#565656",
+          "font_size": 18,
+          "link": "shopify:\/\/collections\/all",
+          "linktext": "Click here"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

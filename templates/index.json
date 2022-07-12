@@ -1,0 +1,49 @@
+{
+  "wrapper": "div#div_id.div_class[attribute-one=value]",
+  "sections": {
+    "1653676594dfcaeec4": {
+      "type": "test",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/sofa.jpg",
+        "imagesize": "70",
+        "pos": false,
+        "enblocktitle": "English title",
+        "frblocktitle": "French title",
+        "title_color": "#000000",
+        "title_font_size": 30,
+        "enblocktext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "frblocktext": "French version of lorem ipsum\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+        "desc_color": "#000000",
+        "font_size": 16,
+        "language": "fr",
+        "text_align": "center",
+        "link": "shopify:\/\/collections",
+        "linktext": "Click Here"
+      }
+    },
+    "165390806082aa325b": {
+      "type": "test",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/chair.jpg",
+        "imagesize": "60",
+        "pos": false,
+        "enblocktitle": "English title",
+        "frblocktitle": "French title",
+        "title_color": "#000000",
+        "title_font_size": 30,
+        "enblocktext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "frblocktext": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "desc_color": "#000000",
+        "font_size": 16,
+        "language": "en",
+        "text_align": "center",
+        "link": "shopify:\/\/collections",
+        "linktext": "Click Here"
+      }
+    }
+  },
+  "order": [
+    "1653676594dfcaeec4",
+    "165390806082aa325b"
+  ]
+}

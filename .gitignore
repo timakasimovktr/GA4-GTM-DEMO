@@ -1,0 +1,5 @@
+config.yml 
+node_modules
+.idea
+.env
+/package-lock.json
